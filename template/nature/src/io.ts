@@ -14,6 +14,7 @@ export const CONFIG = {
 export const readFiles = (dirname: string): string[] =>
     fs
         .readdirSync(dirname)
+        .sort()
         .map((filename) => fs.readFileSync(`${dirname}/${filename}`).toString())
 
 export const getPool = (): Pool => {

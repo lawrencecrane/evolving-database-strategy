@@ -42,7 +42,7 @@ const POOL = io.getPool()
 const nature: Nature<string> = {
     schema: io.readFiles(io.CONFIG.SCHEMA_DIR)[0],
     evolutions: io.readFiles(io.CONFIG.EVOLUTION_DIR),
-    devolutions: io.readFiles(io.CONFIG.DEVOLUTION_DIR),
+    devolutions: io.readFiles(io.CONFIG.DEVOLUTION_DIR).reverse(),
     execute: (sql) => query(POOL, sql),
     getVersion: () =>
         query<{ id: number }>(POOL, GET_VERSION_NUMBER).then(
