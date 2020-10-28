@@ -1,0 +1,2 @@
+-- # Define whole database schema here
+-- create table if not exists users (id integer primary key, name varchar );
