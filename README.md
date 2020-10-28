@@ -1,6 +1,6 @@
 # Evolving Database Strategy
 
-This is design pattern for implementing database changes overtime.
+This is design pattern for implementing database changes over time.
 
 In this template
 
