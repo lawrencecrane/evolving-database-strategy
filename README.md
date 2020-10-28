@@ -20,7 +20,7 @@ Main problems to solve here are as follows:
 
 The first and second problem are solved by creating incremental evolutions by naming files: `0001_<...>.sql`, `0002_<...>.sql`, ... `xxxx_<...>.sql`. Thus, if multiple developers working on different features all need to change the database schema, they need to create evolutions file that will have prefix of the next available number. This will cause merge conflict after one of them merges their feature to master. This in return, will require the other developers to adjust their evolutions accordingly.
 
-The third problem is solved with creation of devolutions and backups in evolutions. Devolutions are one-off mutations used for rollbacks, thus `master` -branch should not contain any devolutions. Developer can create devolution to rollback their changes from an environment, if, for example, another feature needs to be deployed before it. After devolution has been run, developer can remove that from their feature branch and "start over" with their evolutions.
+The third problem is solved with the creation of devolutions and backups in evolutions. Devolutions are one-off mutations used for rollbacks, thus `master` -branch should not contain any devolutions. Developer can create devolution to rollback their changes from an environment, if, for example, another feature needs to be deployed before it. After devolution has been run, developer can remove that from their feature branch and "start over" with their evolutions.
 
 All the schema changes should also be added to `schema.sql` that creates the whole schema from scratch.
 
