@@ -113,7 +113,7 @@ If `evolution_version` table does not exist, we can run schema.sql and update ev
 
 ## Practice
 
-As it's probably apparent at this point, making these evolutions and devolutions is manual process. Thus, this requires developers to define their schema changes twice: in schema.sql and in xxxx_evolution.sql. Not only does this increases work, but it also increases human error, because if these two files do not produce the same schema or create necessary backups to make rollbacks possible, this pattern fails.
+As it's probably apparent at this point, making these evolutions and devolutions is manual process. Thus, this requires developers to define their schema changes twice: in schema.sql and in xxxx_evolution.sql. Not only does this increase work, but it also increases human error, because if these two files do not produce the same schema or create necessary backups to make rollbacks possible, this pattern fails.
 
 Thus code reviews, integration tests, or making this process semi-automatic with the use of schema comparing tools (like `pgdiff`) are options.
 
