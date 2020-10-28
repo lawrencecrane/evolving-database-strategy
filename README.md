@@ -101,15 +101,14 @@ Evolutions are run by increasing order: 1, 2, 3...
 
 Devolutions are run by decreasing order: ..., 3, 2, 1.
 
-#### Incremental changes
-
-1. If id in `evolution_version` is less than max evolution sql number, evolutions will be run from the `evolution_version` + 1.
-2. If the new `evolution_version` (max evolution sql number) is the same as max devolution sql number, devolution sql will be run.
-3. Step 2. will be repeated until the clause is not true.
-
 #### Initialisation
 
-If `evolution_version` table does not exist, we can run schema.sql and update evolution_version to the latest evolution number.
+If `evolution_version` -table does not exist, we create it with value 0, run schema.sql, and update version to N + 1 evolutions.
+
+#### Incremental changes
+
+1. If `evolution_version` - 1 is less than N evolutions, evolutions will be run from the `evolution_version` - 1 evolution.
+2. If devolutions exist, all of them will be run and `evolution_version` will be decreased by N devolutions
 
 ## Practice
 
