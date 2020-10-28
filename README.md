@@ -8,7 +8,7 @@ In this template
 - PostgreSQL for database
 - Node.js (TypeScript) is used for executing these changes
 
-Any and all of these could be implemented with another language or technology. The important aspect here, is the design pattern how this is implemented, not with what this is implemented.
+Any and all of these could be implemented with another language or technology. The important aspect here is the design pattern how this is implemented, not with what this is implemented.
 
 ## Design Pattern
 
