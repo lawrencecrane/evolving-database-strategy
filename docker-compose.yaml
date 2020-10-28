@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+    postgres:
+      image: "postgres:13-alpine"
+      networks:
+        - db-net
+      volumes:
+        - type: volume
+          source: dbdata
+          target: /var/lib/postgresql/data
+      environment:
+        POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+        PGDATA: /var/lib/postgresql/data/pgdata
+      secrets:
+        - postgres_password
+    nature:
+      image: "evolving-database-nature:latest"
+      restart: on-failure
+      networks:
+        - db-net
+      volumes:
+        - type: bind
+          source: ./example
+          target: /home/node/example
+      environment:
+        SCHEMA_DIR: /home/node/example/schema
+        EVOLUTION_DIR: /home/node/example/evolutions
+        DEVOLUTION_DIR: /home/node/example/devolutions
+        POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+        POSTGRES_HOST: postgres
+        POSTGRES_USER: postgres
+        POSTGRES_DB: postgres
+      secrets:
+        - postgres_password
+
+secrets:
+  postgres_password:
+    name: postgress_password
+    file: ./.postgres_password
+  
+volumes:
+  dbdata:
+
+networks:
+  db-net:
+    name: db-net
+    driver: overlay

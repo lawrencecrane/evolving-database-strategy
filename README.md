@@ -122,8 +122,10 @@ We can use a tool to export the schema of database (for example, `pg_dump` for P
 
 ## Setup for example
 
-Build Docker image in root of this repository:
+In root of this repository:
 
-```
-docker build -t evolving-database-nature .
-```
+1. Build Docker image: `docker build -t evolving-database-nature .`
+
+2. Create `.postgres_password` -file: `head -32 /dev/random | md5sum > .postgres_password`
+
+3. Start docker-compose: `docker-compose up`

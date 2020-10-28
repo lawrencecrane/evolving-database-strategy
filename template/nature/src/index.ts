@@ -51,4 +51,6 @@ const nature: Nature<string> = {
     updateVersion: (version) => query(POOL, UPDATE_VERSION_NUMBER, version),
 }
 
-query(POOL, CREATE_VERSION_TABLE).then(() => mutate(nature))
+query(POOL, CREATE_VERSION_TABLE)
+    .then(() => mutate(nature))
+    .catch(() => process.exit(1))
