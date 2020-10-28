@@ -1,0 +1,19 @@
+{
+    "name": "nature",
+    "version": "1.0.0",
+    "description": "Evolve database schema overtime",
+    "main": "dist/index.js",
+    "scripts": {
+        "start": "node dist/index.js",
+        "build": "tsc"
+    },
+    "author": "Lauri Kurki",
+    "license": "ISC",
+    "dependencies": {
+        "typescript": "^4.0.5"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.5",
+        "prettier": "^2.1.2"
+    }
+}
