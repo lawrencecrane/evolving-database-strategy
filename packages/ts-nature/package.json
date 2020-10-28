@@ -1,17 +1,16 @@
 {
-    "name": "nature",
+    "name": "ts-nature",
     "version": "1.0.0",
     "description": "Evolve database schema overtime",
     "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
-        "start": "node dist/index.js",
-        "build": "tsc"
+        "build": "tsc",
+        "install": "npm run build"
     },
     "author": "Lauri Kurki",
     "license": "ISC",
-    "dependencies": {
-        "ts-nature": "file:../../packages/ts-nature"
-    },
+    "dependencies": {},
     "devDependencies": {
         "@types/node": "^14.14.5",
         "prettier": "^2.1.2",

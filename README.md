@@ -120,3 +120,11 @@ Thus code reviews, integration tests, or making this process semi-automatic with
 ### Integration testing
 
 We can use a tool to export the schema of database (for example, `pg_dump` for PostgreSQL), and then compare this exported schema to another one. This means that we can run just schema.sql and run all the evolution sqls in two different (empty) databases, and compare these -- they should produce the same schemas if our schema and evolutions are not diverged.
+
+## Setup for example
+
+Build Docker image in root of this repository:
+
+```
+docker build -t evolving-database-nature .
+```
